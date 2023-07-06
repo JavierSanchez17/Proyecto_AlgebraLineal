@@ -6,9 +6,9 @@ class Sarrus:
             print(fila)
 
     def calcular_sistema(self, matriz):
-        print("Procedimiento de cálculo del determinante:")
+        print("\nProcedimiento de cálculo del determinante:")
 
-        print("Matriz original:")
+        print("\nMatriz original:")
         self.imprimir_matriz(matriz)
 
         # Sarrus
@@ -52,7 +52,7 @@ class Sarrus:
         hz = matriz[2][1]
         iz = matriz[2][3]
 
-        print('Procedimiento: ')
+        print('\nProcedimiento: ')
         detl = (al * el * il) + (bl * fl * gl) + (cl * dl * hl) - (cl * el * gl) - (bl * dl * il) - (al * fl * hl)
         print(f'Delta: ({al} * {el} * {il}) + ({bl} * {fl} * {gl}) + ({cl} * {dl} * {hl}) - ({cl} * {el} * {gl}) - ('
               f'{bl} * {dl} * {il}) - ({al} * {fl} * {hl})')

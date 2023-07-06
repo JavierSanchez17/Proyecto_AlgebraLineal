@@ -17,6 +17,10 @@ class RangoMatriz:
 
             # Hacer cero los elementos debajo de la entrada pivote
             for j in range(i + 1, filas):
+                if matriz[i][i] == 0.0:
+                    print('El rango de la matriz es: ', rango)
+                    return
+
                 print(f'Pivote: {matriz[i][i]}')
                 factor = matriz[j][i] / matriz[i][i]
                 print(f'\nFactor de multiplicacion:\n{matriz[j][i]} / {matriz[i][i]} = {factor}')

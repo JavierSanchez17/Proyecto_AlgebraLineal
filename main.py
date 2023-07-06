@@ -219,22 +219,24 @@ while True:
                 fila.append(elemento)
             matriz1.append(fila)
 
+        print()
+
         try:
-            # Calcular la inversa de la matriz
+
             inversa = MatrizInversa().calcular_inversa(matriz1)
 
-            # Imprimir la matriz y su inversa
-            print("\nMatriz 1:")
+            print("\nMatriz original:")
             for fila in matriz1:
                 print(fila)
 
-            print("\nInversa de la Matriz 1:")
+            print("\nInversa de la Matriz:")
             for fila in inversa:
                 print(fila)
 
         except ValueError as e:
             print("\nError:", str(e))
 
+        print()
         os.system('pause')
 
     elif opcion == 5:
@@ -247,7 +249,7 @@ while True:
         for i in range(filas):
             fila = []
             for j in range(columnas):
-                elemento = float(input(f"Ingrese el elemento en la posición ({i}, {j}): "))
+                elemento = float(input(f"Ingrese el elemento de la fila {i}, columna {j}): "))
                 fila.append(elemento)
             matriz.append(fila)
 
@@ -256,7 +258,10 @@ while True:
             print(fila)
         print()
         rango = RangoMatriz().obtener_rango(matriz)
-        print("El rango de la matriz es:", rango)
+        if rango is None:
+            print()
+        else:
+            print("El rango de la matriz es:", rango)
         os.system('pause')
 
     elif opcion == 6:
@@ -270,11 +275,11 @@ while True:
         for i in range(filas):
             fila = []
             for j in range(columnas):
-                elemento = int(input(f"Elemento a({i + 1},{j + 1}): "))
+                elemento = int(input(f"Elemento de la fila {i + 1}, columna{j + 1}): "))
                 fila.append(elemento)
             matriz.append(fila)
 
-        # Calcular el determinante y mostrar el procedimiento
+
         DeterminanteMatriz().calcular_determinante(matriz)
         os.system('pause')
 
@@ -285,7 +290,7 @@ while True:
         lista_numeros = []
         numeros_cadena = []
         for i in range(3):
-            cadena = input(f'Ingrese la ecuacion {i+1} lineal (signo pegado y separando valores): ')
+            cadena = input(f'Ingrese la ecuacion {i+1} lineal (todo junto y si su valor es 1 colocar el numero): ')
             numeros_cadena.append(re.findall(r'-?\d+', cadena))
 
         for filas in numeros_cadena:
@@ -293,7 +298,7 @@ while True:
             matriz.append(fila_numeros)
 
         x, y, z = Sarrus().calcular_sistema(matriz)
-        print(f'\nValor de las incognitas:\nx = {x}\ny = {y}\nz = {z}')
+        print(f'\nValor de las incognitas:\nx = {x}\ny = {y}\nz = {z}\n')
         os.system('pause')
 
     elif opcion == 8:
@@ -351,6 +356,7 @@ while True:
         os.system('pause')
 
     elif opcion == 9:
+        os.system('cls')
         break
 
     else:
